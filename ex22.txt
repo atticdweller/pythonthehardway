@@ -155,3 +155,18 @@ def mathFunc(num1, num2)
 numbVar = 11
 mathFunc(numbvar, numbVar+1000)
 
+ex20
+===
+rewind a file
+file = open(filename)
+
+file.seek(0) # this seeks to byte position 0
+
+ex21
+===
+functions return values!!
+
+def gimmefive()
+	return 5
+
+
