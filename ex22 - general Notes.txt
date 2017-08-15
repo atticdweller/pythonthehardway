@@ -449,3 +449,12 @@ OPERATORS
 %= -- modulus of the left by the right and asigns to the left
 **= -- takes the left to the power of the right and assigns to the left
  
+ex38
+=====
+dir() lists all the stuff made so far in the interactive shell
+dir(classname) gives a list of the methods in the passed in class variable_name
+
+you can join list back into strings using join
+' '.join(myarray) #the insterted character is what splices each of the elements together
+'#'.join(myarray[3:5]) # splices the array with # and only the elements 3 and 4
+
