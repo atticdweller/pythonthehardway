@@ -1,0 +1,172 @@
+ex1
+===
+print "some text"
+print 'some text'
+#this is a comment also disables code
+
+ex2
+===
+print "some text" # then a comment afterwards
+
+ex3
+===
+print "a string", 11 # prints a number and a string on same line
+print "bool val", True
+print "bool val", False
++ addition
+- subtraction
+* multiplication
+/ division
+>= greater than equal to
+<= less than equal to
+< less than
+> greater than
+== tests equality
+= assigs right value to left variable
+
+ex4
+===
+variable_name = "variable content string"
+variableNumber = 77
+addedVariables = variableNumber + 1
+addedVariables += variableNumber
+print "Strings and numbers", variableNumber, "can be printed in line"
+
+ex5
+===
+text = "some text"
+print "insert variable into %s", text
+number = 77
+moretext = "more text"
+print "several strings %s %s and numbers %d", %(text, moretext, number)
+
+ex6
+===
+String insert types
+%r raw input for programers
+%s string
+%d numbers/digits
+
+ex7
+===
+#you can multiply strings
+print "," * 10 # prints out 10 dots
+
+string1 = "first"
+string2 = "second"
+print string1+string2,
+print "adding the comma at the end makes this one line"
+
+
+ex8
+===
+formatter = "%r %r %r %r"
+variablestring = "string here"
+print formatter %("string1", 11, variablestring, "another")
+
+ex9
+===
+print "this is on \n two lines"
+
+ex10
+===
+print " there is a \t tab"
+
+ex11
+===
+User input!!
+value = raw_input()
+QuestionPrompt = raw_input("can you type in a string?")
+questionInt = (int)raw_input("whats your age?")
+
+ex13
+===
+Multiple insterted strings into raw input
+raw_input("what is your favorite? %r %r %r" %("string1","string2","string3"))
+
+ex14
+====
+launch a python script with argumentS!
+
+from sys import argv
+script, somevariable = argv # this captures that stuff entered 
+
+python script.py thestringtosendtothescriptinargv
+
+
+ex15
+====
+using the input arguments to open and close a file!
+fileObject = open(filename)
+stringVar = fileObject.read()
+fileObject.close()
+
+ex16
+===
+Opening a file and then deleting it and writing to it
+
+fileObject = open(filename, 'w') # the w is for write mode only, you cant read it
+fileobject.truncate() # this deletes everything in the file
+
+fileObject.write("some text")
+fileObject.write("\n")
+mystringVar = "more text\n"
+fileObject.write(mystringVar)
+
+fileObject.close()
+
+ex17
+====
+from os.path import exists
+
+exists(filename) # returns if the file exists or not as bool
+
+open(filename) # opens only in read mode
+
+script value1, value2 = argv # unpacks the two variables that are passed into the function
+
+writeFile = open(filename , 'w')
+
+readWriteFile = open(filename, "r+")
+
+len(readWriteFile.read()) # returns the length in bytes of the file
+
+ex18
+===
+Functions!!!
+
+def myFunc(var1, var2)
+	# do stuff
+	#its all gotta be indented!
+
+def anotherFunc(*var)
+	var1, var2, var3 = var # you gotta unpack it, the * means pass an array of things
+
+def noArgFunc()
+	#we got no args@!
+
+ex19
+===
+functions with math done in the arguments!
+
+def mathFunc(num1, num2)
+	#do cool things
+
+numbVar = 11
+mathFunc(numbvar, numbVar+1000)
+
+ex20
+===
+rewind a file
+file = open(filename)
+
+file.seek(0) # this seeks to byte position 0
+
+ex21
+===
+functions return values!!
+
+def gimmefive()
+	return 5
+
+
