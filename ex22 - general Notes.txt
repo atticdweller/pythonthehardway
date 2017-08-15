@@ -1,0 +1,451 @@
+ex1
+===
+print "some text"
+print 'some text'
+#this is a comment also disables code
+
+ex2
+===
+print "some text" # then a comment afterwards
+
+ex3
+===
+print "a string", 11 # prints a number and a string on same line
+print "bool val", True
+print "bool val", False
++ addition
+- subtraction
+* multiplication
+/ division
+>= greater than equal to
+<= less than equal to
+< less than
+> greater than
+== tests equality
+= assigs right value to left variable
+
+ex4
+===
+variable_name = "variable content string"
+variableNumber = 77
+addedVariables = variableNumber + 1
+addedVariables += variableNumber
+print "Strings and numbers", variableNumber, "can be printed in line"
+
+ex5
+===
+text = "some text"
+print "insert variable into %s", text
+number = 77
+moretext = "more text"
+print "several strings %s %s and numbers %d", %(text, moretext, number)
+
+ex6
+===
+String insert types
+%r raw input for programers
+%s string
+%d numbers/digits
+
+ex7
+===
+#you can multiply strings
+print "," * 10 # prints out 10 dots
+
+string1 = "first"
+string2 = "second"
+print string1+string2,
+print "adding the comma at the end makes this one line"
+
+
+ex8
+===
+formatter = "%r %r %r %r"
+variablestring = "string here"
+print formatter %("string1", 11, variablestring, "another")
+
+ex9
+===
+print "this is on \n two lines"
+
+ex10
+===
+print " there is a \t tab"
+
+ex11
+===
+User input!!
+value = raw_input()
+QuestionPrompt = raw_input("can you type in a string?")
+questionInt = (int)raw_input("whats your age?")
+
+ex13
+===
+Multiple insterted strings into raw input
+raw_input("what is your favorite? %r %r %r" %("string1","string2","string3"))
+
+ex14
+====
+launch a python script with argumentS!
+
+from sys import argv
+script, somevariable = argv # this captures that stuff entered 
+
+python script.py thestringtosendtothescriptinargv
+
+
+ex15
+====
+using the input arguments to open and close a file!
+fileObject = open(filename)
+stringVar = fileObject.read()
+fileObject.close()
+
+ex16
+===
+Opening a file and then deleting it and writing to it
+
+fileObject = open(filename, 'w') # the w is for write mode only, you cant read it
+fileobject.truncate() # this deletes everything in the file
+
+fileObject.write("some text")
+fileObject.write("\n")
+mystringVar = "more text\n"
+fileObject.write(mystringVar)
+
+fileObject.close()
+
+ex17
+====
+from os.path import exists
+
+exists(filename) # returns if the file exists or not as bool
+
+open(filename) # opens only in read mode
+
+script value1, value2 = argv # unpacks the two variables that are passed into the function
+
+writeFile = open(filename , 'w')
+
+readWriteFile = open(filename, "r+")
+
+len(readWriteFile.read()) # returns the length in bytes of the file
+
+ex18
+===
+Functions!!!
+
+def myFunc(var1, var2)
+	# do stuff
+	#its all gotta be indented!
+
+def anotherFunc(*var)
+	var1, var2, var3 = var # you gotta unpack it, the * means pass an array of things
+
+def noArgFunc()
+	#we got no args@!
+
+ex19
+===
+functions with math done in the arguments!
+
+def mathFunc(num1, num2)
+	#do cool things
+
+numbVar = 11
+mathFunc(numbvar, numbVar+1000)
+
+ex20
+===
+rewind a file
+file = open(filename)
+
+file.seek(0) # this seeks to byte position 0
+
+ex21
+===
+functions return values!!
+
+def gimmefive()
+	return 5
+
+
+ex24
+====
+multiline = """
+this is a multi\n
+line string\n
+\t with formating
+"""
+
+ex25
+====
+sentence = "this is a sample sentence"
+words = sentence.split(' ') # this breaks out an array of words
+firstWord = words.pop(0)
+lastWord = words.pop(-1)
+
+sortedWords = sorted(words) # sorted sorts any list you pass in
+# any array passed in is actually just a list
+
+ex29 -30
+====
+if statements!
+if 1==1:
+	#do the thing
+elif 1 != 0:
+	#do the other thing
+else:
+	#finally do this
+
+conditional operators 
+> < >= <= == != 
+
+ex31
+====
+if statements with user input!
+
+input = raw_input("> ") # raw input just gives you strings!
+if input == "1": 
+	#the input was 1
+
+ex32
+====
+for loops! 
+
+for thing in collection:
+	#do something on each thing in the collection
+
+for i in range(min,max,increment)
+	#do something on i 
+
+collection = range(0,10)
+for i in range(0,len(collection))
+	#lets me go through each element in collection with the i variable
+
+
+ex33
+====
+while loop!
+
+while 1==1:
+	# do a thing until the top is not true
+
+while condition:
+	#make condition false eventually
+
+ex35
+====
+combine funcitons and input with loops
+
+exit() # this is a way to end the app with an exit code
+exit(0) # this is the no error exit for the app
+exit(errorcode)
+
+
+ex36
+====
+rules for if statements
+1. Every if statement must have an else
+2. If this else should never be run because it doesn't' make sence
+then you must use a die function.
+3. Never nest if statements more then 2 deep. Always strive for making them 1 deep.
+Put the nested If into another function
+4. Treat if statements like paragraphs where each if elif and and else grouping
+is like a set of sentences, put blank lines before and afterwards
+5. Boolean tests should be simple in if statements. If not do the calculation above
+and set the result to a variable with a meaningful variable_name
+6. Don't be a slave to the rules, these are guidelines to get started'
+
+Rules for loops
+1. use a while loop only for loop forever. and that probably means never
+2. Use a for-loop for all other kinds of looping, especially if there is afixed
+or limied number of things to loop over
+
+Tips for debugging
+1. Don't use a debugger' a debugger at this point will have too much useless info
+2. Best way to debug is to use print statements outputting the value of your variables
+and following the flow of your program that way.
+3. Make sure parts of your programs work as you work on them. Do not write
+massive files of code before you try to run them. code a little, run a little, fix a little
+
+
+
+ex37
+====
+Symbol review!
+
+KEYWORDS
+and -- Logical and gate, true and true, true and false
+
+del -- deletes the variable del myvar 
+
+from -- imports a library with direct access, from mylib import * 
+lets you access directly the functions in mylib
+
+not -- inverts logic on the variable True == not False
+
+while -- A loop works like:
+	while (condition is true):
+		#do this stuff
+as -- Used for aliasing and typically with import statements
+	import someBigModuleName as sbmn 
+
+elif -- to follow an if statment if the next option requires conditions
+
+global -- turns a variable declaring in local scope to be global, and usable
+	within any scope
+
+or -- logical or, returns true if either side is true, condition1 or condition2
+
+with -- used with as ,and apparently helpful for calling hidden __enter__ and __exit__ 
+	functions that are built in. For example:
+		with open('testfile.txt') as test:
+			test.read()
+		the file is closed after the with block completes
+
+assert -- used for making sure the internal state of a program is as expected and 
+	throws debug errors if its not for example:
+		assert 1==2, 'the variables are not equal'
+
+else -- do this if the if statment fails, do this anyways
+
+if -- if condition do the code afterwards
+
+pass -- used when a statment is required syntactically but no code should execute in it
+	good as a note to future programmers that nothing is happening there for a reason
+
+yield -- this is a rabbit hole of generators and stuff dragons be here
+
+break -- breaks out of a loop 
+
+except -- the second half of a try , it catches the error and handles it
+
+import -- imports local usage of some module, eg : import datetime
+
+print -- prints data to the console, however you stick it there
+
+class -- instantiating a class of object dragons here
+
+exec -- executes python code that is passed in as a string or code object
+	program = 'a =5 \nb=10\nprint("sum = ", a+b)'
+	exec(program)
+	also dragons here too
+
+in -- tests if something is inside something else, used as :
+	'hello' in 'hello my darling' #true
+	'hello' in "hello my darling".split(' ') # true, its in the array
+	'ello' in "hello my darling".split(' ') # false, its not an element of the array
+
+raise -- causes an exception, takes an error class and an argument :
+	raise ValueError, "oh no"
+
+continue -- used in a loop to skip the ramaining parts of the loop, and jump to the next
+	itteration through the loop
+
+finally -- used as the last part of a try except block. the finally is always run 
+	at the end of a try block, and used for cleanup, it runs regardless of any exceptions
+	that were thrown
+
+is -- identity comparison, checks if two things have the same identity, pointing to the 
+	same object, list, variable, whatever, the contents will be the same with a == but
+	they may be two different objects with the same contents, you have to check the 
+	identity of the object to determine it is the same object
+
+return -- used in functions for returning a value
+
+def -- used for defining a class for function
+
+for - for loop for i in range(0,10)
+
+lambda -- a way for defining a function in line, useful for functional programming
+	f = lambda x: x*2
+	f(2) # 4
+
+try -- used for doing something that may fail. this lets you save it gracefully using
+	try , except and finally
+
+
+
+DATA TYPES 
+True -- boolean true
+
+False-- boolean False
+
+None -- this is like null, its nothing, the absense of anything
+
+strings -- "hi i'm a string"
+
+numbers -- 1 , 100000,-3200
+
+floats -- 1.0003, 10029939.93939
+
+lists -- ['a','collection','of','stuff'] 
+
+STRING ESCAPE SEQUENCES
+\\ -- Prints \
+\' -- Prints '
+\" -- prints "
+\a -- makes rining the bell alert sound
+\b -- backspace, removes the previous character printed
+\f -- ascii form feed
+\n -- newline character
+\r -- ASCII carrage return, takes you back to the begiing of the line
+\t -- ascii tab character
+\v -- ascii vertical tab
+
+
+STRING FORMATS
+
+%d signed integer decimal
+%i signed integer decimal
+%o unsigned octal
+%u unsigned decimal
+%x unsigned hexadecimal lowercase
+%X unsigned hexadecimal uppercase
+%e floating point exponential format lowercase
+%E floating point exponential format uppercase
+%f floating point decimal format
+%F floating point decimal format
+%g same as 'e' if exponent it sgreater than -4 or less precise f otherwise
+%G same as 'E' but F
+%c single character	
+%r string, converts python object using repr()
+%s string, converts python object using str()
+%% no argument is converted, results in a % in the result
+ 
+
+OPERATORS 
+
++ -- adds two numbers, or adds strings 
+- -- subtracts two numbers
+* -- multiply things 
+** -- seems to be exponent and something crazy
+/ -- divide
+// -- floor division, results into whole number adjusted to the left in number line
+% -- modulus
+< -- bool comparison, less than
+> -- bool comparison, greater than
+<= -- bool comparison, less than equal to
+>= -- bool comparison, greater than equal to
+== -- bool comparison , equal to
+!= -- bool comparison, not equal to
+<> -- bool comparison, not equal to, enable in python 3 using 
+	from __future__ import barry_as_FLUFL
+() -- used at the use of a function for passing parameters
+[] -- array use
+{} -- get back to this 
+@ -- a decorator, seems utterly bizare
+, -- delimeting list elements
+: -- the "everything after this is the function" break
+. -- period, for decimal numbers?
+= -- assign right thing to the left thing
+; -- delimits the end of a line, or can put multiple statements on one line
++= -- adds whatever on the right to the left
+-= -- subtracts whatever on the right from the left 
+*= -- multiplies the left and right arguments and assigns it to the left
+/= -- dividies the left by the right and assigns it to the left
+//= -- floor divide left by right and assign to left
+%= -- modulus of the left by the right and asigns to the left
+**= -- takes the left to the power of the right and assigns to the left
+ 
