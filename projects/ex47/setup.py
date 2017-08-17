@@ -1,9 +1,10 @@
+
 try:
 	from setuptools import setup 
 except ImportError:
 	from distutils.core import setup
 
-config = {
+config = [
 'description': 'My Project',
 'author': 'My Name',
 'url': 'URL to get it at.',
@@ -11,9 +12,9 @@ config = {
 'author_email': 'My email',
 'version': '0.1',
 'install_requires': ['nose'],
-'packages': ['TestProject'],
-'scripts': ['bin/test.py'],
-'name': 'projectname'
-}
+'packages': ['ex47'],
+'scripts': [],
+'name': 'ex47'
+]
 
 setup(**config)

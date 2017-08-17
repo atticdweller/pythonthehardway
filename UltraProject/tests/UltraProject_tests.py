@@ -1,5 +1,5 @@
 from nose.tools import *
-import TestProject
+import UltraProject
 
 def setup():
 	print "SETUP!!!"
@@ -8,4 +8,4 @@ def teardown():
 	print "Tear Down!!"
 
 def test_basic():
-	print "I ran!"
+	print "I ran!" 
