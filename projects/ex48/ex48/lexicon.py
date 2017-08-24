@@ -1,26 +1,53 @@
-def scan(words):
-	for word in words:
-		result = ScanDirection(word)
+directions = ('north','south','east','west')
+verbs = ('go','kill','eat','dance')
+stops = ('the','of','in','stop')
+nouns = ('bear','princess','castle')
+
+def scan(inputwords):
+	resultList = []
+	words = inputwords.split(' ')
+	for upword in words:
+		word = upword.lower()
+		result = ScanList(directions,word,'direction')
 		if(result != None):
-			resultList.append((result,word))
+			resultList.append((result,upword))
 			continue
-		result = ScanVerbs(word)
+		result = ScanList(verbs,word,'verb')
 		if(result != None):
-			resultList.append((result,word))
+			resultList.append((result,upword))
 			continue
+		result = ScanList(stops,word,'stop')
+		if(result != None):
+			resultList.append((result,upword))
+			continue
+		result = ScanList(nouns,word,'noun')
+		if(result != None):
+			resultList.append((result,upword))
+			continue
+		result = TestIfNumber(word)
+		if(result != None):
+			resultList.append((result,int(word)))
+			continue
+		#if the input word is nothing meaningful it must be an error!
+		resultList.append(('error',upword))
+
 	return resultList
 
-def ScanDirection(word):
-	directions = ('north','south','east','west')
-	if(word in directions):
-		print "the word " + word + " is in the list"
-		return "direction"
+def TestIfNumber(inputWord):
+	convertedNumber = None
+	try:
+		convertedNumber = int(inputWord)
+	except ValueError:
+		pass
+	if(convertedNumber != None):
+		#it must be a number!
+		return 'number'
 	else:
 		return None
 
-def ScanVerbs(word):
-	verbs = ('go','kill','eat','dance')
-	if(word in verbs):
-		return "verb"
+
+def ScanList(wordlist,word,positiveResult):
+	if(word in wordlist):
+		return positiveResult
 	else:
 		return None
