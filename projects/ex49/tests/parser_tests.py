@@ -56,5 +56,4 @@ def TestParseSentence():
 	inputsent = lexicon.scan("the bear eat")
 	assert_raises(parser.ParserError, parser.parse_sentence, inputsent)
 	inputsent = lexicon.scan("bear eat castle")
-	
 	assert_equal('bear', parser.parse_sentence(inputsent).subject)
